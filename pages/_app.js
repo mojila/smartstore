@@ -36,6 +36,7 @@ export default class MyApp extends App {
       <>
         <Head>
           <title>{title}</title>
+          <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
         </Head>
         <Container>
           <Main>

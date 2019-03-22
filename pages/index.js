@@ -1,10 +1,18 @@
 import React from 'react'
-import Button from '@material-ui/core/Button';
+import dynamic from 'next/dynamic'
+import BottomNavigationMap from '../components/BottomNavigationMap'
 
-const Index = () => (
-    <>
-        <Button>adaw</Button>
-    </>
-)
+const DynamicComponentWithNoSSR = dynamic(() => import('../components/Map'), {
+    ssr: false
+})
+
+const Index = (props) => {
+    return (
+        <>
+            <DynamicComponentWithNoSSR/>
+            <BottomNavigationMap/>
+        </>
+    )
+}
 
 export default Index

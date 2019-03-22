@@ -50,6 +50,7 @@ export default class MyDocument extends Document {
           <meta name="twitter:image" content={thumbnail} />
 
           {/* Bonus: Have app icon and splash screen for PWAs saved to homescreen on iOS devices */}
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black" />
           <link
