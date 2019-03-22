@@ -9,13 +9,13 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background--1);
     font-family: 'PT Sans', sans-serif;
     margin: 0;
+    padding: 0;
   }
 `;
 
 const Main = styled.main`
-  margin: 0 auto;
-  max-width: var(--max-width);
-  padding: var(--padding);
+  margin: 0;
+  padding: 0;
 `;
 
 export default class MyApp extends App {
