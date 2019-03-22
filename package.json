@@ -6,7 +6,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "now && now alias"
   },
   "repository": {
     "type": "git",

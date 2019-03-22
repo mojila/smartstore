@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "boilerplate-frontend",
-  "alias": ["boilerplate-frontend"],
+  "name": "smartstore",
+  "alias": ["smartstore"],
   "routes": [
     {
       "src": "^/service-worker.js$",

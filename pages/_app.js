@@ -11,6 +11,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  .noselect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  .pointer {
+    cursor: pointer;
+  }
 `;
 
 const Main = styled.main`

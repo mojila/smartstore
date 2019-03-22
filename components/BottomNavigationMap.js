@@ -6,7 +6,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore'
 import DriveIcon from '@material-ui/icons/DriveEta'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
-import teal from '@material-ui/core/colors/teal'
+import NotificationIcon from '@material-ui/icons/NotificationsActiveOutlined'
 
 const styles = {
   root: {
@@ -15,8 +15,7 @@ const styles = {
     positon: 'absolute',
     bottom: 0,
     left: 0,
-    zIndex: 99,
-    color: teal
+    zIndex: 99
   },
 };
 
@@ -39,9 +38,10 @@ class BottomNavigationMap extends React.Component {
         onChange={this.handleChange}
         className={classes.root}
       >
+        <BottomNavigationAction label="Plant List" icon={<LocationOnIcon />} selected />
         <BottomNavigationAction label="Tracking" icon={<DriveIcon />} />
         <BottomNavigationAction label="History" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Plant List" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Notification" icon={<NotificationIcon />}/>
       </BottomNavigation>
     );
   }

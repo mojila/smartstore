@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ReactMapGL, { Marker } from 'react-map-gl'
+import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
@@ -9,12 +9,12 @@ const styles = theme => ({
     root: {
         ...theme.mixins.gutters(),
         paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2
     },
 });
 
 const Map = (props) => {
-    const { classes } = props
+    const { classes, children } = props
 
     const [viewport, setViewport] = useState({
         width: '100vw',
@@ -31,57 +31,11 @@ const Map = (props) => {
             onViewportChange={(newViewport) => setViewport(newViewport)}
             {...viewport}
         >
-            <Marker
-                latitude={-7.24917}
-                longitude={112.75083}
-                offsetLeft={-20}
-                offsetTop={-10}
-            >
-                <Paper className={classes.root} elevation={1}>
-                    <Typography component="p">
-                        Plant A
-                    </Typography>
-                </Paper>
-            </Marker>
-            
-            <Marker
-                latitude={-7.29920}
-                longitude={112.71090}
-                offsetLeft={-20} 
-                offsetTop={-10}
-            >
-                <Paper className={classes.root} elevation={1}>
-                    <Typography component="p">
-                        Plant B
-                    </Typography>
-                </Paper>
-            </Marker>
+            <div style={{position: 'absolute', right: '1em', top: '1em'}}>
+                <NavigationControl onViewportChange={(newViewport) => setViewport(newViewport)} />
+            </div>
 
-            <Marker
-                latitude={-7.21}
-                longitude={112.73}
-                offsetLeft={-20} 
-                offsetTop={-10}
-            >
-                <Paper className={classes.root} elevation={1}>
-                    <Typography component="p">
-                        Plant C
-                    </Typography>
-                </Paper>
-            </Marker>
-
-            <Marker
-                latitude={-7.24940}
-                longitude={112.79}
-                offsetLeft={-20} 
-                offsetTop={-10}
-            >
-                <Paper className={classes.root} elevation={1}>
-                    <Typography component="p">
-                        Plant D
-                    </Typography>
-                </Paper>
-            </Marker>
+            { children }
         </ReactMapGL>
     )
 }
