@@ -1,25 +1,24 @@
 {
-  "name": "next-pwa-boilerplate",
-  "version": "1.2.0",
+  "name": "boilerplate-frontend",
+  "version": "0.0.1",
   "description": "Start your progressive web app off with a perfect Google Lighthouse score.",
   "main": "server/index.js",
   "scripts": {
     "build": "next build",
-    "deploy": "now && now alias",
     "dev": "next",
     "start": "next start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pingboard/next-pwa-boilerplate.git"
+    "url": "git+https://github.com/mojila/boilerplate-frontend.git"
   },
-  "author": "James Y Rauhut <james@seejamescode.com> (https://seejamescode.com/)",
-  "license": "MIT",
+  "author": "Mojila <me.mojila@gmail.com>",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pingboard/next-pwa-boilerplate/issues"
+    "url": "https://github.com/mojila/boilerplate-frontend.git/issues"
   },
-  "homepage": "https://next-pwa-boilerplate.now.sh",
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.1",
     "next-offline": "^3.3.1",
