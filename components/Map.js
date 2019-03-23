@@ -1,20 +1,9 @@
 import React, { useState } from 'react'
-import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
+import ReactMapGL, { NavigationControl } from 'react-map-gl'
 import { withStyles } from '@material-ui/core/styles'
-import PropTypes from 'prop-types'
-
-const styles = theme => ({
-    root: {
-        ...theme.mixins.gutters(),
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2
-    },
-});
 
 const Map = (props) => {
-    const { classes, children } = props
+    const { children } = props
 
     const [viewport, setViewport] = useState({
         width: '100vw',
@@ -38,10 +27,6 @@ const Map = (props) => {
             { children }
         </ReactMapGL>
     )
-}
-
-Map.propTypes = {
-    classes: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(Map)
