@@ -6,8 +6,7 @@ import { title } from "./_document";
 // Any global CSS variables and selectors we want
 const GlobalStyle = createGlobalStyle`
   body {
-    background: var(--background--1);
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
   }
