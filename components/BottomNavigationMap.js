@@ -7,6 +7,7 @@ import RestoreIcon from '@material-ui/icons/Restore'
 import DriveIcon from '@material-ui/icons/DriveEta'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import NotificationIcon from '@material-ui/icons/NotificationsActiveOutlined'
+import Router from 'next/router'
 
 const styles = {
   root: {
@@ -15,7 +16,8 @@ const styles = {
     positon: 'absolute',
     bottom: 0,
     left: 0,
-    zIndex: 99
+    zIndex: 99,
+    boxShadow: '0 -5px 5px -5px #333'
   },
 };
 
@@ -28,8 +30,14 @@ class BottomNavigationMap extends React.Component {
     this.setState({ value });
   };
 
+  componentDidMount() {
+    const { page } = this.props
+
+    this.setState({ value: page })
+  }
+
   render() {
-    const { classes } = this.props;
+    const { classes, page } = this.props;
     const { value } = this.state;
 
     return (
@@ -38,10 +46,14 @@ class BottomNavigationMap extends React.Component {
         onChange={this.handleChange}
         className={classes.root}
       >
-        <BottomNavigationAction label="Plant List" icon={<LocationOnIcon />} selected />
-        <BottomNavigationAction label="Tracking" icon={<DriveIcon />} />
-        <BottomNavigationAction label="History" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Notification" icon={<NotificationIcon />}/>
+        <BottomNavigationAction label="Warehouse" icon={<LocationOnIcon />}
+          onClick={() => Router.push('/dashboard')}/>
+        <BottomNavigationAction label="Pelacakan" icon={<DriveIcon />} 
+          onClick={() => Router.push('/dashboard/track')}/>
+        <BottomNavigationAction label="Riwayat" icon={<RestoreIcon />}
+          onClick={() => Router.push('/dashboard/history')}/>
+        <BottomNavigationAction label="Pemberitahuan" icon={<NotificationIcon />}
+          onClick={() => Router.push('/dashboard/notification')}/>
       </BottomNavigation>
     );
   }
@@ -49,6 +61,7 @@ class BottomNavigationMap extends React.Component {
 
 BottomNavigationMap.propTypes = {
   classes: PropTypes.object.isRequired,
+  page: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(BottomNavigationMap);

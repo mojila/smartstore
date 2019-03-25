@@ -1,11 +1,12 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import BottomNavigationMap from '../../components/BottomNavigationMapMap'
+import BottomNavigationMap from '../../components/BottomNavigationMap'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { Marker } from 'react-map-gl'
+import NoSsr from '@material-ui/core/NoSsr';
 
 const plants = [
     { latitude: -7.24917, longitude: 112.75083, name: 'Plant A' },
@@ -14,7 +15,7 @@ const plants = [
     { latitude: -7.24940, longitude: 112.79, name: 'Plant B' },
 ]
 
-const DynamicComponentWithNoSSR = dynamic(() => import('../../components/MapMap'), {
+const DynamicComponentWithNoSSR = dynamic(() => import('../../components/Map'), {
     ssr: false
 })
 
@@ -46,7 +47,9 @@ const Dashboard = (props) => {
                     </Paper>
                 </Marker>) }
             </DynamicComponentWithNoSSR>
-            <BottomNavigationMap/>
+            <NoSsr>
+                <BottomNavigationMap page={0}/>
+            </NoSsr>
         </>
     )
 }

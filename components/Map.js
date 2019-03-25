@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import ReactMapGL, { NavigationControl } from 'react-map-gl'
-import { withStyles } from '@material-ui/core/styles'
 
 const Map = (props) => {
     const { children } = props
@@ -29,4 +28,4 @@ const Map = (props) => {
     )
 }
 
-export default withStyles(styles)(Map)
+export default Map
